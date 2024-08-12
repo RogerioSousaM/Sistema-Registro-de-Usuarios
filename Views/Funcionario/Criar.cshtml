@@ -1,0 +1,54 @@
+@model RegistrarUsuarios.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Criar usuario";
+}
+
+<div class="text-center">
+    <h1>Criar novo usuário</h1>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            <form asp-action="Criar" method="post">
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">E-mail</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Departamento" class="control-label">Departamento</label>
+                    <input asp-for="Departamento" class="form-control" />
+                    <span asp-validation-for="Departamento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UsuarioDeRede" class="control-label">Usuário de rede</label>
+                    <input asp-for="UsuarioDeRede" class="form-control" />
+                    <span asp-validation-for="UsuarioDeRede" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cargo" class="control-label">Cargo</label>
+                    <input asp-for="Cargo" class="form-control" />
+                    <span asp-validation-for="Cargo" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

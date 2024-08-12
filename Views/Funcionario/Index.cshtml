@@ -1,0 +1,46 @@
+@model IEnumerable<RegistrarUsuarios.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Listagem de contatos";
+}
+
+<div class="text-center">
+    <h2>Funcionários</h2>
+</div>
+
+<p>
+    <a asp-action="Criar" class="btn btn-primary rounded">Criar novo Usuário</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Departamento</th>
+                <th>Usuário de Rede</th>
+                <th>Cargo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Email</td>
+                    <td>@item.Departamento</td>
+                    <td>@item.UsuarioDeRede</td>
+                    <td>@item.Cargo</td>
+                    <td>
+                        <a asp-action="Editar" class="btn btn-info btn-sm rounded" asp-route-id="@item.Id">Editar</a> 
+                        <a asp-action="Informacoes" class="btn btn-secondary btn-sm rounded" asp-route-id="@item.Id">Informações</a>
+                        <a asp-action="Deletar" class="btn btn-danger btn-sm rounded" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,50 @@
+﻿/* Estilos gerais */
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc; /* Cor dos links */
+}
+
+.btn-primary {
+  color: #fff; /* Cor do texto dos botões primários */
+  background-color: #1b6ec2; /* Cor de fundo dos botões primários */
+  border-color: #1861ac; /* Cor da borda dos botões primários */
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #f7f4f4; /* Cor do texto dos links ativos nas nav-pills */
+  background-color: #1b6ec2; /* Cor de fundo dos links ativos nas nav-pills */
+  border-color: #1861ac; /* Cor da borda dos links ativos nas nav-pills */
+} 
+
+.border-top {
+  border-top: 1px solid #0e0a0a; /* Cor da borda superior */
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5; /* Cor da borda inferior */
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); /* Sombra das caixas */
+}
+
+button.accept-policy {
+  font-size: 1rem; /* Tamanho da fonte dos botões de aceitação de política */
+  line-height: inherit; /* Altura da linha dos botões de aceitação de política */
+}
+
+/* Estilo do rodapé */
+.footer{
+  position: relative; /* Garante que o footer esteja dentro do fluxo do documento */
+  width: 100%; /* Faz com que o rodapé ocupe toda a largura da tela */
+  text-align: center; /* Centraliza o texto no rodapé */
+  background-color: #000; /* Fundo preto para o rodapé */
+  color: #fff; /* Texto branco no rodapé */
+  padding: 20px 0; /* Adiciona preenchimento vertical ao rodapé */
+  border-top: none; /* Remove a borda superior se houver */
+}
