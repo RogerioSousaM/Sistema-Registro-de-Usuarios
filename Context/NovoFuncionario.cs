@@ -15,5 +15,11 @@ namespace RegistrarUsuarios.Context
 
         }
         public DbSet<Funcionario> Funcionarios{get; set;}
+        public DbSet<Login> Logins{get; set;}
+
+
+         protected override void OnModelCreating(ModelBuilder modelBuilder)
+         {
+         }
     }
 }

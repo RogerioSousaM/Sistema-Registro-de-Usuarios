@@ -1,41 +1,57 @@
-@model RegistrarUsuarios.Models.Funcionario
+@model RegistrarUsuarios.Models.FuncionarioList
 
 @{
-    ViewData["Title"] = "Informações do Usuario";
+    ViewData["Title"] = "Informações do Usuário";
 }
 
-
-<div class="text-center">
-    <h1>Informações do Usuário</h1>
-</div>
-
-<div class="card">
-    <div class="card-body">
-        <dl class="row">
-            <dt class="col-sm-2">Nome:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Nome)</dd>
-            <hr class="my-10">
-
-            <dt class="col-sm-2">E-mail:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Email)</dd>
-            <hr class="my-1">
-
-            <dt class="col-sm-2">Departamento:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Departamento)</dd>
-            <hr class="my-1">
-
-            <dt class="col-sm-2">Usuário de rede:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.UsuarioDeRede)</dd>
-            <hr class="my-1">
-
-            <dt class="col-sm-2">Cargo:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Cargo)</dd>
-
-        </dl>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h2>Informações do Usuário</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Nome</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.Nome)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">E-mail</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.Email)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Senha E-mail</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.SenhaEmail)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Tipo de Acesso</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.Tipo)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Senha</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.Senha)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Departamento</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.Departamento)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Cargo</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Funcionario.Cargo)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a asp-action="Editar" asp-route-id="@Model.Funcionario.Id" class="btn btn-primary">Editar</a>
+                <a asp-action="Index" class="btn btn-secondary ml-2">Voltar</a>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="mt-3">
-    <a asp-action="Editar" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
-    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
 </div>

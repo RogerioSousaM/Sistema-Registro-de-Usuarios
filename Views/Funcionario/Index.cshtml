@@ -1,46 +1,58 @@
-@model IEnumerable<RegistrarUsuarios.Models.Funcionario>
+<div class="container-fluid">
+    <div class="row">
+        <!-- bloco 1 -->
+        <main class="col-lg-9 col-md-9">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h2>Funcionários</h2>
+                    </div>
 
-@{
-    ViewData["Title"] = "Listagem de contatos";
-}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Departamento</th>
+                                    <th>Cargo</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Nome</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.Departamento</td>
+                                        <td>@item.Cargo</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <a asp-action="Editar" class="btn btn-info btn-sm rounded me-2"
+                                                    asp-route-id="@item.Id">Editar</a>
+                                                <a asp-action="Informacoes" class="btn btn-secondary btn-sm rounded me-2"
+                                                    asp-route-id="@item.Id">Informações</a>
+                                                <a asp-action="Deletar" class="btn btn-danger btn-sm rounded"
+                                                    asp-route-id="@item.Id">Deletar</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-<div class="text-center">
-    <h2>Funcionários</h2>
-</div>
-
-<p>
-    <a asp-action="Criar" class="btn btn-primary rounded">Criar novo Usuário</a>
-</p>
-
-<div class="table-responsive">
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Departamento</th>
-                <th>Usuário de Rede</th>
-                <th>Cargo</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Nome</td>
-                    <td>@item.Email</td>
-                    <td>@item.Departamento</td>
-                    <td>@item.UsuarioDeRede</td>
-                    <td>@item.Cargo</td>
-                    <td>
-                        <a asp-action="Editar" class="btn btn-info btn-sm rounded" asp-route-id="@item.Id">Editar</a> 
-                        <a asp-action="Informacoes" class="btn btn-secondary btn-sm rounded" asp-route-id="@item.Id">Informações</a>
-                        <a asp-action="Deletar" class="btn btn-danger btn-sm rounded" asp-route-id="@item.Id">Deletar</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        <!-- (30%) -->
+        <div class="col-lg-2 d-none d-lg-block bg-dark p-2 rounded sticky-top" style="height: 25vh;">
+            <h4 class="text-white">Atalhos</h4>
+            <ul class="list-unstyled">
+                <li><a asp-action="Criar" class="btn btn-primary btn-block mb-2">Criar usuário</a></li>
+                <li><a asp-action="" class="btn btn-secondary btn-block">Base de conhecimento</a></li>
+            </ul>
+        </div>
+    </div>
 </div>

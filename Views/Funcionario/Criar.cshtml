@@ -1,54 +1,71 @@
-@model RegistrarUsuarios.Models.Funcionario
+@model RegistrarUsuarios.Models.FuncionarioList
 
 @{
-    ViewData["Title"] = "Criar usuario";
+    ViewData["Title"] = "Criar novo usuário";
 }
 
-<div class="text-center">
-    <h1>Criar novo usuário</h1>
-</div>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            @if (TempData["SuccessMessage"] != null)
-            {
-                <div class="alert alert-success" role="alert">
-                    @TempData["SuccessMessage"]
-                </div>
-            }
-            <form asp-action="Criar" method="post">
-                <div class="form-group">
-                    <label asp-for="Nome" class="control-label">Nome</label>
-                    <input asp-for="Nome" class="form-control" />
-                    <span asp-validation-for="Nome" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label">E-mail</label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Departamento" class="control-label">Departamento</label>
-                    <input asp-for="Departamento" class="form-control" />
-                    <span asp-validation-for="Departamento" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="UsuarioDeRede" class="control-label">Usuário de rede</label>
-                    <input asp-for="UsuarioDeRede" class="form-control" />
-                    <span asp-validation-for="UsuarioDeRede" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Cargo" class="control-label">Cargo</label>
-                    <input asp-for="Cargo" class="form-control" />
-                    <span asp-validation-for="Cargo" class="text-danger"></span>
-                </div>
-                <br />
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary">Criar</button>
-                    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
-                </div>
-            </form>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h2>Criar Novo Usuário</h2>
+            </div>
+            <div class="card-body">
+                <form asp-action="Criar" method="post">
+                    <div class="form-group">
+                        <label asp-for="Funcionario.Nome" class="control-label">Nome</label>
+                        <input asp-for="Funcionario.Nome" class="form-control" />
+                        <span asp-validation-for="Funcionario.Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Funcionario.Email" class="control-label">E-mail</label>
+                        <input asp-for="Funcionario.Email" class="form-control" />
+                        <span asp-validation-for="Funcionario.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Funcionario.SenhaEmail" class="control-label">Senha e-mail</label>
+                        <input asp-for="Funcionario.SenhaEmail" class="form-control" value="Teste" />
+                        <span asp-validation-for="Funcionario.SenhaEmail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Funcionario.Tipo" class="control-label">Tipo de acesso</label>
+                        <select asp-for="Funcionario.Tipo" asp-items="Model.TipoAcesso" class="form-control"></select>
+                        <span asp-validation-for="Funcionario.Tipo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Funcionario.Senha" class="control-label">Senha</label>
+                        <input asp-for="Funcionario.Senha" class="form-control" value="Teste"/>
+                        <span asp-validation-for="Funcionario.Senha" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Funcionario.Departamento" class="control-label">Departamento</label>
+                        <input asp-for="Funcionario.Departamento" class="form-control" />
+                        <span asp-validation-for="Funcionario.Departamento" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Funcionario.Cargo" class="control-label">Cargo</label>
+                        <input asp-for="Funcionario.Cargo" class="form-control" />
+                        <span asp-validation-for="Funcionario.Cargo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group text-center mt-4">
+                        <button type="submit" class="btn btn-primary">Criar</button>
+                        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </form>
+                
+            </div>
+            
         </div>
     </div>
+            <!-- (10%) -->
+        <div class="col-lg-2 d-none d-lg-block bg-dark p-1 rounded sticky-top ms-2"
+            style="height: 21vh; overflow-y: auto;">
+            <h4 class="text-white">Criar acessos</h4>
+            <ul class="list-unstyled">
+                <li><a href="Coloque o link aqui" target="_blank">Sistema - 1</a></li>
+                <li><a href="Coloque o link aqui" target="_blank">Gmail</a></li>
+                <li><a href="Coloquei o link aqui" target="_blank">Outlook</a></li>
+                <li><a href="Coloquei o link aqui" target="_blank">Usuário de rede</a></li>
+            </ul>
+        </div>
 </div>

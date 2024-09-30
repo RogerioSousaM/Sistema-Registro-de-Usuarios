@@ -1,51 +1,18 @@
 /* _content/RegistrarUsuarios/Views/Shared/_Layout.cshtml.rz.scp.css */
-/* Estilos gerais */
-a.navbar-brand[b-n0dvydwdqn] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+html[b-n0dvydwdqn],body[b-n0dvydwdqn] {
+    height: 100%;
+    margin: 0;
 }
 
-a[b-n0dvydwdqn] {
-  color: #0077cc; /* Cor dos links */
+body[b-n0dvydwdqn] {
+    display: flex;
+    flex-direction: column;
+    /* Organiza o conteúdo verticalmente */
+
+    background-color: #080707;
 }
 
-.btn-primary[b-n0dvydwdqn] {
-  color: #fff; /* Cor do texto dos botões primários */
-  background-color: #1b6ec2; /* Cor de fundo dos botões primários */
-  border-color: #1861ac; /* Cor da borda dos botões primários */
-}
-
-.nav-pills .nav-link.active[b-n0dvydwdqn], .nav-pills .show > .nav-link[b-n0dvydwdqn] {
-  color: #f7f4f4; /* Cor do texto dos links ativos nas nav-pills */
-  background-color: #1b6ec2; /* Cor de fundo dos links ativos nas nav-pills */
-  border-color: #1861ac; /* Cor da borda dos links ativos nas nav-pills */
-} 
-
-.border-top[b-n0dvydwdqn] {
-  border-top: 1px solid #0e0a0a; /* Cor da borda superior */
-}
-
-.border-bottom[b-n0dvydwdqn] {
-  border-bottom: 1px solid #e5e5e5; /* Cor da borda inferior */
-}
-
-.box-shadow[b-n0dvydwdqn] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); /* Sombra das caixas */
-}
-
-button.accept-policy[b-n0dvydwdqn] {
-  font-size: 1rem; /* Tamanho da fonte dos botões de aceitação de política */
-  line-height: inherit; /* Altura da linha dos botões de aceitação de política */
-}
-
-/* Estilo do rodapé */
-.footer[b-n0dvydwdqn]{
-  position: relative; /* Garante que o footer esteja dentro do fluxo do documento */
-  width: 100%; /* Faz com que o rodapé ocupe toda a largura da tela */
-  text-align: center; /* Centraliza o texto no rodapé */
-  background-color: #000; /* Fundo preto para o rodapé */
-  color: #fff; /* Texto branco no rodapé */
-  padding: 20px 0; /* Adiciona preenchimento vertical ao rodapé */
-  border-top: none; /* Remove a borda superior se houver */
+.container[b-n0dvydwdqn] {
+    flex: 1;
+    /* Faz com que o container principal expanda para ocupar o espaço disponível */
 }

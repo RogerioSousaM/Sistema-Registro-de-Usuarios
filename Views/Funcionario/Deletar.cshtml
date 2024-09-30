@@ -4,43 +4,49 @@
     ViewData["Title"] = "Deletar Funcionário";
 }
 
-<div class="text-center">
-    <h1>Deletar Funcionário</h1>
-</div>
-
-<hr />
-<div class="card">
-    <div class="card-body">
-        <dl class="row">
-            <dt class="col-sm-2">Nome:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Nome)</dd>
-            <hr class="my-10">
-
-            <dt class="col-sm-2">E-mail:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Email)</dd>
-            <hr class="my-1">
-
-            <dt class="col-sm-2">Departamento:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Departamento)</dd>
-            <hr class="my-1">
-
-            <dt class="col-sm-2">Usuário:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.UsuarioDeRede)</dd>
-            <hr class="my-1">
-
-            <dt class="col-sm-2">Cargo:</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(x => x.Cargo)</dd>
-        </dl>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h2>Deletar Funcionário</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Nome</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Nome)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">E-mail</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Email)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Departamento</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Departamento)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Usuário</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Tipo)</div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-right font-weight-bold">Cargo</div>
+                        <div class="col-sm-8 text-left">@Html.DisplayFor(x => x.Cargo)</div>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
+                        Confirmar Exclusão
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary ml-2">Cancelar</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-    Confirmar Exclusão
-</button>
-
-<a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-
 
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">

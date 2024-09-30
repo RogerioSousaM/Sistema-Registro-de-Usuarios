@@ -1,16 +1,19 @@
 using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
+using RegistrarUsuarios.Context;
 using RegistrarUsuarios.Models;
 
 namespace RegistrarUsuarios.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly NovoFuncionario _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(NovoFuncionario context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -18,10 +21,37 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult Index(Login login)
     {
-        return View();
+    if (ModelState.IsValid)
+    {
+       var senhaHash = HashPassword(login.Senha);
+       var usuario = _context.Logins
+       .FirstOrDefault(u => u.Usuario == login.Usuario && u.Senha == senhaHash);
+
+        if (usuario != null)
+           {
+             TempData["SuccessMessage"] = "Login realizado com sucesso!";
+             return RedirectToAction("Index", "Funcionario");
+           }
+            else
+             {
+                ModelState.AddModelError(string.Empty, "Tentativa de login inválida.");
+             }
+        }
+                return View(login);
     }
+
+
+    private string HashPassword(string senha)
+    {
+        using (var sha256 = SHA256.Create())
+        {
+            var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
+            return BitConverter.ToString(bytes).Replace("-", "").ToLower();
+        }
+    }   
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

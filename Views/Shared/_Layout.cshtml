@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,70 +8,41 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RegistrarUsuarios.styles.css" asp-append-version="true" />
-    <style>
-        html, body {
-            height: 100%; /* Garante que o HTML e o corpo ocupem a altura total da tela */
-            margin: 0; /* Remove margens padrão do corpo */
-        }
-
-        body {
-            display: flex;
-            flex-direction: column; /* Organiza o conteúdo verticalmente */
-        }
-
-        .container {
-            flex: 1; /* Faz com que o container principal expanda para ocupar o espaço disponível */
-        }
-
-        .footer {
-            width: 100%; /* Ajusta a largura do rodapé para ocupar 100% da largura da tela */
-            text-align: center; /* Centraliza o texto no rodapé */
-            background-color: rgba(0, 0, 0, 0.7); /* Adiciona um fundo preto semi-transparente ao rodapé */
-            color: white; /* Define a cor do texto como branco */
-            padding: 20px 0; /* Adiciona preenchimento vertical ao rodapé */
-            border-top: none; /* Remove a borda superior se houver */
-            position: relative; /* Garante que o rodapé esteja posicionado corretamente */
-        }
-    </style>
 </head>
-<body>
+
+<body class="bg-info">
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <!-- Botão de alternância para dispositivos móveis -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-               
+
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
-                        </li>
-                    </ul>
-                 
                     <div class="d-flex justify-content-center w-100">
-                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">.NET - C# - Entity - SQL Server</a>
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Formulário</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container  rounded">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer border-top text-muted">
+    @* <footer class="footer bg-secondary text-center text-white border-top py-3">
         <div class="container">
             &copy; 2024 - Rogério Sousa Moreira
         </div>
-    </footer>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
