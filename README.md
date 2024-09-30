@@ -16,7 +16,7 @@ Funcionalidades Principais
 
     Entity Framework
     C#
-    .NET Core e MVC
+    .NET
     SQL Server
 
 **Como Executar o Projeto**
