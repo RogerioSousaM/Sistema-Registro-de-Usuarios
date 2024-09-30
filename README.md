@@ -26,7 +26,7 @@ Funcionalidades Principais
     git clone https://github.com/seuusuario/nome-do-repositorio.git
 
 
-git clone https://github.com/seuusuario/nome-do-repositorio.git
+git clone https://github.com/RogerioSousaM/Sistema-Registro-de-Usuarios.git
 
 **Navegue até o diretório do projeto:**
 
