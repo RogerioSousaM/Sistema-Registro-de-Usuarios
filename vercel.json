@@ -1,9 +1,18 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "RegistrarUsuarios.csproj",
+      "use": "@vercel/dotnet"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "/"
     }
-  ]
+  ],
+  "env": {
+    "ASPNETCORE_ENVIRONMENT": "Production"
+  }
 } 

@@ -1,0 +1,12 @@
+{
+  "name": "sistema-registro-usuarios",
+  "version": "1.0.0",
+  "description": "Sistema de Registro de Usuários em ASP.NET Core",
+  "scripts": {
+    "build": "dotnet publish -c Release -o ./publish",
+    "start": "dotnet ./publish/RegistrarUsuarios.dll"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
