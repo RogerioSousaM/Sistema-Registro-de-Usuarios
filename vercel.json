@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "RegistrarUsuarios.csproj",
-      "use": "@vercel/dotnet"
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
     }
   ],
   "routes": [
@@ -13,6 +13,7 @@
     }
   ],
   "env": {
-    "ASPNETCORE_ENVIRONMENT": "Production"
+    "ASPNETCORE_ENVIRONMENT": "Production",
+    "PORT": "8080"
   }
 } 

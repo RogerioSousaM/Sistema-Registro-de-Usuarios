@@ -64,4 +64,6 @@ if (!string.IsNullOrEmpty(connectionString))
     }
 }
 
-app.Run();
+// Configure for Vercel/Docker
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Run($"http://0.0.0.0:{port}");
