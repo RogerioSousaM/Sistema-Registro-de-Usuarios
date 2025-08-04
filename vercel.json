@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "RegistrarUsuarios.csproj",
+      "use": "@vercel/dotnet@3.0.0"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/css/(.*)",
+      "dest": "/wwwroot/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/wwwroot/js/$1"
+    },
+    {
+      "src": "/lib/(.*)",
+      "dest": "/wwwroot/lib/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/wwwroot/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "ASPNETCORE_ENVIRONMENT": "Production"
+  },
+  "functions": {
+    "api/*.cs": {
+      "runtime": "@vercel/dotnet@3.0.0"
+    }
+  }
+} 

@@ -1,45 +1,108 @@
 
 # Sistema de Registro de Usuários
 
-**Descrição**
+Sistema web desenvolvido em ASP.NET Core para gerenciamento de funcionários.
 
-O sistema foi desenvolvido para simplificar a vida do administrador, permitindo gerenciar as credenciais e acessos dos funcionários de forma rápida e segura.
-Funcionalidades Principais
+## 🚀 Deploy no Vercel
 
-    Login Seguro: Autenticação com hash de senha utilizando SHA256.
-    Gestão de Funcionários: Criação, edição, visualização e remoção de funcionários, atribuição de cargos, departamentos e tipos de acesso personalizados.
-    Níveis de Acesso: Diferentes permissões para acesso à rede, VPN e sistemas internos.
-    Validação de Dados: Campos obrigatórios e validação para garantir informações corretas e seguras.
-    Feedback ao Usuário: Mensagens claras de sucesso e erro durante as interações no sistema.
+### Pré-requisitos
+- Conta no Vercel
+- Banco de dados SQL Server (Azure SQL Database recomendado)
+- Git configurado
 
-**Tecnologias Utilizadas**
+### Passos para Deploy
 
-    Entity Framework
-    C#
-    .NET
-    SQL Server
+1. **Configure o banco de dados:**
+   - Crie um banco SQL Server (Azure SQL Database recomendado)
+   - Atualize a string de conexão em `appsettings.Production.json`
 
-**Como Executar o Projeto**
+2. **Configure as variáveis de ambiente no Vercel:**
+   ```
+   ASPNETCORE_ENVIRONMENT=Production
+   ConnectionStrings__ConexaoPadrao=sua-string-de-conexao-aqui
+   ```
 
-    Clone este repositório:
+3. **Deploy via Git:**
+   ```bash
+   # Conecte seu repositório ao Vercel
+   vercel --prod
+   ```
 
-    git clone https://github.com/seuusuario/nome-do-repositorio.git
+4. **Ou via GitHub:**
+   - Conecte seu repositório GitHub ao Vercel
+   - Configure as variáveis de ambiente no painel do Vercel
+   - Faça push das alterações
 
+### Configuração do Banco de Dados
 
-git clone https://github.com/RogerioSousaM/Sistema-Registro-de-Usuarios.git
+1. **Azure SQL Database (Recomendado):**
+   - Crie um servidor SQL no Azure
+   - Crie um banco de dados
+   - Configure as regras de firewall
+   - Use a string de conexão fornecida pelo Azure
 
-**Navegue até o diretório do projeto:**
+2. **String de Conexão:**
+   ```
+   Server=seu-servidor.database.windows.net; 
+   Initial Catalog=NovosFuncionarios; 
+   User Id=seu-usuario; 
+   Password=sua-senha; 
+   TrustServerCertificate=True
+   ```
 
-    cd nome-do-repositorio
+### Estrutura do Projeto
 
-**Restaure as dependências:**
+- **Controllers/**: Controladores da aplicação
+- **Models/**: Modelos de dados
+- **Views/**: Views Razor
+- **Context/**: Contexto do Entity Framework
+- **Migrations/**: Migrações do banco de dados
 
-    dotnet restore
+### Funcionalidades
 
-**Execute o projeto:**
+- Login de usuários
+- Cadastro de funcionários
+- Listagem de funcionários
+- Edição de funcionários
+- Exclusão de funcionários
 
-    dotnet watch run
+### Tecnologias Utilizadas
 
-**Contribuições**
+- ASP.NET Core 8.0
+- Entity Framework Core
+- SQL Server
+- Bootstrap
+- Razor Pages
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+### Solução de Problemas
+
+**Erro 404 no Vercel:**
+- Verifique se o arquivo `vercel.json` está presente
+- Confirme se as variáveis de ambiente estão configuradas
+- Verifique se a string de conexão está correta
+
+**Problemas de Banco de Dados:**
+- Confirme se o banco está acessível
+- Verifique se as credenciais estão corretas
+- Teste a conexão localmente primeiro
+
+### Desenvolvimento Local
+
+```bash
+# Restaurar dependências
+dotnet restore
+
+# Executar migrações
+dotnet ef database update
+
+# Executar aplicação
+dotnet run
+```
+
+### Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
