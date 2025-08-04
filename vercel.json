@@ -30,10 +30,5 @@
   ],
   "env": {
     "ASPNETCORE_ENVIRONMENT": "Production"
-  },
-  "functions": {
-    "api/*.cs": {
-      "runtime": "@vercel/dotnet@3.0.0"
-    }
   }
 } 
