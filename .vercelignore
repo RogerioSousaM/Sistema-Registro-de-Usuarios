@@ -1,0 +1,24 @@
+# Ignore .NET files
+*.cs
+*.csproj
+*.sln
+bin/
+obj/
+Migrations/
+Controllers/
+Models/
+Context/
+Views/
+Program.cs
+appsettings*.json
+
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Keep only Node.js files
+!package.json
+!vercel.json
+!api/
+!public/ 
